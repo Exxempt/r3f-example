@@ -1,6 +1,7 @@
 import './globals.css'
 import { ThemeProvider } from "@/components/theme-provider"
 import { SiteHeader } from "@/components/site-header"
+import { ConfiguratorProvider } from '@/contexts/Configurator'
 
 export const metadata = {
   title: 'Create Next App',
@@ -21,10 +22,12 @@ export default function RootLayout({
       <html lang="en" suppressHydrationWarning>
         <head />
         <body>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <SiteHeader />
-            <div className="flex-1">{children}</div>
-          </ThemeProvider>
+          <ConfiguratorProvider>
+            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+              <SiteHeader />
+              <div className="flex-1">{children}</div>
+            </ThemeProvider>
+          </ConfiguratorProvider>
         </body>
       </html>
     </>
