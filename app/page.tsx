@@ -1,13 +1,19 @@
 "use client"
 
 import * as React from 'react'
-import { useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, Sky, Environment } from "@react-three/drei";
-import { Monke } from '@/components/monke/monke'
-import { CardWithForm } from '@/components/Interface'
-
+import { Monke } from '@/components/monke'
+import Interface from '@/components/Interface'
+import { useConfigurator } from "../contexts/Configurator";
+//import { MonkeEars }  from '@/components/MonkeGen copy';
+import { MonkeEars, MonkeMouth, MonkeTemp }  from '@/components/monke/MonkeGen';
 export default function Home() {
+  const {
+    selectedEarsOption,
+    selectedMouthOption
+  } = useConfigurator();
+
   return (
 
 <main className="flex min-h-screen flex-col items-center justify-between p-0" >
@@ -20,12 +26,13 @@ export default function Home() {
   {/*<OrbitControls />*/}
   <OrbitControls makeDefault rotateSpeed={2} minPolarAngle={Math.PI / 2.5} maxPolarAngle={Math.PI / 1.5} />
 
-  <Monke />
-
+  {/*<Monke />*/}
+  <MonkeEars x={selectedEarsOption} />
+  <MonkeMouth x={selectedMouthOption} />
   <Environment preset="city" />
   <Sky />
   </Canvas>
-  <CardWithForm />
+  <Interface />
   </div>
 </main>    
   )

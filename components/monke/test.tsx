@@ -2,11 +2,14 @@
 
 import * as React from 'react'
 import { Box } from '@/components/box'
+import { useConfigurator } from "../../contexts/Configurator";
 
-export function Test() {
+export default function Test() {
+  const { selectedEarsOption } = useConfigurator();
+  //console.log(selectedEarsOption)
       return (
         <>
-            <Box position={[-15, -15, 8]} color='#0e1a38' />
+            <Box position={[-13, -13, 6]} color='#0e1a38' />
         </>
       )
 }

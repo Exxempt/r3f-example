@@ -22,7 +22,7 @@ import {
 import { useConfigurator } from "../contexts/Configurator";
 import { traits } from "@/lib/traits"
  
-export const CardWithForm = () => {
+export const Interface = () => {
   const {legs,
         toggleLegs,
         selectedClothesOption,
@@ -37,6 +37,7 @@ export const CardWithForm = () => {
         setSelectedMouthOption,
         selectedTypeOption,
         setSelectedTypeOption} = useConfigurator();
+
 
     const handleChange = () => {
       console.log(selectedClothesOption)
@@ -222,4 +223,4 @@ export const CardWithForm = () => {
   )
 }
 
-export default CardWithForm
+export default Interface;

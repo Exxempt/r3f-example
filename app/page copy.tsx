@@ -6,7 +6,7 @@ import * as React from 'react'
 import { useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, Sky, Environment } from "@react-three/drei";
-import { Monke } from '@/components/monke/monke'
+import { Monke } from '@/components/monke'
 
 {/** 
 type ComponentProps = JSX.IntrinsicElements['mesh'] & {
