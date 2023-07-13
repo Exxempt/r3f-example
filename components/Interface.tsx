@@ -37,13 +37,6 @@ export const CardWithForm = () => {
         setSelectedMouthOption,
         selectedTypeOption,
         setSelectedTypeOption} = useConfigurator();
-      
-    console.log(selectedClothesOption)
-    console.log(selectedEarsOption)
-    console.log(selectedEyesOption)
-    console.log(selectedHatOption)
-    console.log(selectedMouthOption)
-    console.log(selectedTypeOption)
 
     const handleChange = () => {
       console.log(selectedClothesOption)

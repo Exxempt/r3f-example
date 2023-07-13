@@ -1,12 +1,13 @@
 "use client"
 
 import * as React from 'react'
-import { useConfigurator } from "../contexts/Configurator";
+import { useConfigurator } from "../../contexts/Configurator";
 import { Box } from '@/components/box'
-import { Test } from './monke/test';
+import { Test } from './test';
+import { MonkeEars } from '../../contexts/MonkeGen'
 
 export function Monke() {
-  const { legs, toggleLegs } = useConfigurator();
+  const { selectedEarsOption, legs, toggleLegs } = useConfigurator();
     return (
       <>
           <Box position={[-3, 5, 0]} color='#0e1a38' />
@@ -221,6 +222,7 @@ export function Monke() {
           <Box position={[6, -10, 0]} color='#ee9d2f' />
           <Box position={[7, -10, 0]} color='#ee9d2f' />
           <Box position={[8, -10, 0]} color='#0e1a38' />
+          <MonkeEars />
           <Test />
       </>
     )
