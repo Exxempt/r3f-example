@@ -1,6 +1,5 @@
 "use client"
 
-//import { none, silverEarring, goldEarring } from "@/components/monke/ears";
 import * as React from 'react'
 import { useState, FC } from "react";
 import { Box } from '@/components/box'
