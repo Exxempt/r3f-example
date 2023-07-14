@@ -3,15 +3,14 @@
 import * as React from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, Sky, Environment } from "@react-three/drei";
-import { Monke } from '@/components/monke'
 import Interface from '@/components/Interface'
 import { useConfigurator } from "../contexts/Configurator";
-//import { MonkeEars }  from '@/components/MonkeGen copy';
-import { MonkeEars, MonkeMouth, MonkeTemp }  from '@/components/monke/MonkeGen';
+import { MonkeEars, MonkeMouth, MonkeType, MonkeTemp }  from '@/components/monke/MonkeGen';
 export default function Home() {
   const {
     selectedEarsOption,
-    selectedMouthOption
+    selectedMouthOption,
+    selectedTypeOption
   } = useConfigurator();
 
   return (
@@ -26,11 +25,13 @@ export default function Home() {
   {/*<OrbitControls />*/}
   <OrbitControls makeDefault rotateSpeed={2} minPolarAngle={Math.PI / 2.5} maxPolarAngle={Math.PI / 1.5} />
 
-  {/*<Monke />*/}
+  {/* <Monke /> */}
+  {/* <MonkeTemp /> */}
+  <MonkeType x={selectedTypeOption} />
   <MonkeEars x={selectedEarsOption} />
   <MonkeMouth x={selectedMouthOption} />
   <Environment preset="city" />
-  <Sky />
+  {/* <Sky /> */}
   </Canvas>
   <Interface />
   </div>
