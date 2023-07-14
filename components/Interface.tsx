@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -8,118 +8,150 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { ScrollArea } from "@/components/ui/scroll-area"
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@/components/ui/select";
 import { useConfigurator } from "../contexts/Configurator";
-import { traits } from "@/lib/traits"
- 
+import { traits } from "@/lib/traits";
+
 export const Interface = () => {
-  const {legs,
-        toggleLegs,
-        selectedClothesOption,
-        setSelectedClothesOption,
-        selectedEarsOption,
-        setSelectedEarsOption,
-        selectedEyesOption,
-        setSelectedEyesOption,
-        selectedHatOption,
-        setSelectedHatOption,
-        selectedMouthOption,
-        setSelectedMouthOption,
-        selectedTypeOption,
-        setSelectedTypeOption} = useConfigurator();
+  const {
+    legs,
+    toggleLegs,
+    selectedClothesOption,
+    setSelectedClothesOption,
+    selectedEarsOption,
+    setSelectedEarsOption,
+    selectedEyesOption,
+    setSelectedEyesOption,
+    selectedHatOption,
+    setSelectedHatOption,
+    selectedMouthOption,
+    setSelectedMouthOption,
+    selectedTypeOption,
+    setSelectedTypeOption,
+  } = useConfigurator();
 
+  const handleChange = () => {
+    console.log(selectedClothesOption);
+    console.log(selectedEarsOption);
+    console.log(selectedEyesOption);
+    console.log(selectedHatOption);
+    console.log(selectedMouthOption);
+    console.log(selectedTypeOption);
+  };
 
-    const handleChange = () => {
-      console.log(selectedClothesOption)
-      console.log(selectedEarsOption)
-      console.log(selectedEyesOption)
-      console.log(selectedHatOption)
-      console.log(selectedMouthOption)
-      console.log(selectedTypeOption)
-    }; 
+  const getClothes = () => {
+    return traits.filter((item) => item.trait_type == "Clothes");
+  };
+  const getEars = () => {
+    return traits.filter((item) => item.trait_type == "Ears");
+  };
+  const getEyes = () => {
+    return traits.filter((item) => item.trait_type == "Eyes");
+  };
+  const getHat = () => {
+    return traits.filter((item) => item.trait_type == "Hat");
+  };
+  const getMouth = () => {
+    return traits.filter((item) => item.trait_type == "Mouth");
+  };
+  const getType = () => {
+    return traits.filter((item) => item.trait_type == "Type");
+  };
 
-    const getClothes = () => {
-      return traits.filter(item => item.trait_type == "Clothes")
-    }
-    const getEars = () => {
-      return traits.filter(item => item.trait_type == "Ears")
-    }
-    const getEyes = () => {
-      return traits.filter(item => item.trait_type == "Eyes")
-    }
-    const getHat = () => {
-      return traits.filter(item => item.trait_type == "Hat")
-    }
-    const getMouth = () => {
-      return traits.filter(item => item.trait_type == "Mouth")
-    }
-    const getType = () => {
-      return traits.filter(item => item.trait_type == "Type")
-    }
+  const populateClothes = () => {
+    let item = getClothes();
+    let sortedItem = item.sort((a, b) => a.value.localeCompare(b.value))
 
-    const populateClothes = () => {
-      let item = getClothes();
-      let i = 0;
-      return item.map((trait) => {
-        i++
-        return <SelectItem key={i} value={trait.value}>{trait.value}</SelectItem>;
-      });
-    }
+    let i = 0;
+    return sortedItem.map((trait) => {
+      i++;
+      return (
+        <SelectItem key={i} value={trait.value}>
+          {trait.value}
+        </SelectItem>
+      );
+    });
+  };
 
-    const populateEars = () => {
-      let item = getEars();
-      let i = 0;
-      return item.map((trait) => {
-        i++
-        return <SelectItem key={i} value={trait.value}>{trait.value}</SelectItem>;
-      });
-    }
+  const populateEars = () => {
+    let item = getEars();
+    let sortedItem = item.sort((a, b) => a.value.localeCompare(b.value))
+    let i = 0;
+    return sortedItem.map((trait) => {
+      i++;
+      return (
+        <SelectItem key={i} value={trait.value}>
+          {trait.value}
+        </SelectItem>
+      );
+    });
+  };
 
-    const populateEyes = () => {
-      let item = getEyes();
-      let i = 0;
-      return item.map((trait) => {
-        i++
-        return <SelectItem key={i} value={trait.value}>{trait.value}</SelectItem>;
-      });
-    }
+  const populateEyes = () => {
+    let item = getEyes();
+    let sortedItem = item.sort((a, b) => a.value.localeCompare(b.value))
+    let i = 0;
+    return sortedItem.map((trait) => {
+      i++;
+      return (
+        <SelectItem key={i} value={trait.value}>
+          {trait.value}
+        </SelectItem>
+      );
+    });
+  };
 
-    const populateHat = () => {
-      let item = getHat();
-      let i = 0;
-      return item.map((trait) => {
-        i++
-        return <SelectItem key={i} value={trait.value}>{trait.value}</SelectItem>;
-      });
-    }
+  const populateHat = () => {
+    let item = getHat();
+    let sortedItem = item.sort((a, b) => a.value.localeCompare(b.value))
+    let i = 0;
+    return sortedItem.map((trait) => {
+      i++;
+      return (
+        <SelectItem key={i} value={trait.value}>
+          {trait.value}
+        </SelectItem>
+      );
+    });
+  };
 
-    const populateMouth = () => {
-      let item = getMouth();
-      let i = 0;
-      return item.map((trait) => {
-        i++
-        return <SelectItem key={i} value={trait.value}>{trait.value}</SelectItem>;
-      });
-    }
+  const populateMouth = () => {
+    let item = getMouth();
+    let sortedItem = item.sort((a, b) => a.value.localeCompare(b.value))
+    let i = 0;
+    return sortedItem.map((trait) => {
+      i++;
+      return (
+        <SelectItem key={i} value={trait.value}>
+          {trait.value}
+        </SelectItem>
+      );
+    });
+  };
 
-    const populateType = () => {
-      let item = getType();
-      let i = 0;
-      return item.map((trait) => {
-        i++
-        return <SelectItem key={i} value={trait.value}>{trait.value}</SelectItem>;
-      });
-    }
+  const populateType = () => {
+    let item = getType();
+    let sortedItem = item.sort((a, b) => a.value.localeCompare(b.value))
+    let i = 0;
+    return sortedItem.map((trait) => {
+      i++;
+      return (
+        <SelectItem key={i} value={trait.value}>
+          {trait.value}
+        </SelectItem>
+      );
+    });
+  };
 
   return (
     <Card className="w-[350px]">
@@ -140,8 +172,8 @@ export const Interface = () => {
                 <SelectTrigger>
                   <SelectValue placeholder="Select" />
                   <SelectContent position="popper">
-                  <ScrollArea className="h-72  rounded-md border">
-                    {populateClothes()}
+                    <ScrollArea className="h-72  rounded-md border">
+                      {populateClothes()}
                     </ScrollArea>
                   </SelectContent>
                 </SelectTrigger>
@@ -153,9 +185,9 @@ export const Interface = () => {
                 <SelectTrigger>
                   <SelectValue placeholder="Select" />
                   <SelectContent position="popper">
-                  <ScrollArea className="h-38  rounded-md border">
-                  {populateEars()}
-                  </ScrollArea>
+                    <ScrollArea className="h-38  rounded-md border">
+                      {populateEars()}
+                    </ScrollArea>
                   </SelectContent>
                 </SelectTrigger>
               </Select>
@@ -166,9 +198,9 @@ export const Interface = () => {
                 <SelectTrigger>
                   <SelectValue placeholder="Select" />
                   <SelectContent position="popper">
-                  <ScrollArea className="h-72  rounded-md border">
-                  {populateEyes()}
-                  </ScrollArea>
+                    <ScrollArea className="h-72  rounded-md border">
+                      {populateEyes()}
+                    </ScrollArea>
                   </SelectContent>
                 </SelectTrigger>
               </Select>
@@ -179,9 +211,9 @@ export const Interface = () => {
                 <SelectTrigger>
                   <SelectValue placeholder="Select" />
                   <SelectContent position="popper">
-                  <ScrollArea className="h-72  rounded-md border">
-                  {populateHat()}
-                  </ScrollArea>
+                    <ScrollArea className="h-72  rounded-md border">
+                      {populateHat()}
+                    </ScrollArea>
                   </SelectContent>
                 </SelectTrigger>
               </Select>
@@ -192,9 +224,9 @@ export const Interface = () => {
                 <SelectTrigger>
                   <SelectValue placeholder="Select" />
                   <SelectContent position="popper">
-                  <ScrollArea className="h-42 rounded-md border">
-                  {populateMouth()}
-                  </ScrollArea>
+                    <ScrollArea className="h-42 rounded-md border">
+                      {populateMouth()}
+                    </ScrollArea>
                   </SelectContent>
                 </SelectTrigger>
               </Select>
@@ -205,9 +237,9 @@ export const Interface = () => {
                 <SelectTrigger>
                   <SelectValue placeholder="Select" />
                   <SelectContent position="popper">
-                  <ScrollArea className="h-74  rounded-md border">
-                  {populateType()}
-                  </ScrollArea>
+                    <ScrollArea className="h-74  rounded-md border">
+                      {populateType()}
+                    </ScrollArea>
                   </SelectContent>
                 </SelectTrigger>
               </Select>
@@ -220,7 +252,7 @@ export const Interface = () => {
         <Button onClick={handleChange}>Generate</Button>
       </CardFooter>
     </Card>
-  )
-}
+  );
+};
 
 export default Interface;
