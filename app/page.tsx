@@ -5,13 +5,14 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, Sky, Environment } from "@react-three/drei";
 import Interface from '@/components/Interface'
 import { useConfigurator } from "../contexts/Configurator";
-import { MonkeEars, MonkeMouth, MonkeType, MonkeHat, MonkeTemp }  from '@/components/monke/MonkeGen';
+import { MonkeEars, MonkeMouth, MonkeType, MonkeHat, MonkeClothes, MonkeEyes, MonkeTemp }  from '@/components/monke/MonkeGen';
 export default function Home() {
   const {
     selectedEarsOption,
     selectedMouthOption,
     selectedTypeOption,
     selectedHatOption,
+    selectedClothesOption,
   } = useConfigurator();
 
   return (
@@ -32,6 +33,7 @@ export default function Home() {
   <MonkeEars x={selectedEarsOption} />  
   <MonkeMouth x={selectedMouthOption} />
   <MonkeHat x={selectedHatOption} />
+  <MonkeClothes x={selectedClothesOption} />
   <Environment preset="city" />
   <Sky />
   </Canvas>
