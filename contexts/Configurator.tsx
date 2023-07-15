@@ -11,29 +11,33 @@ interface ConfiguratorContext {
     selectedHatOption: string;
     selectedTypeOption: string;
     selectedMouthOption: string;
+    selectedBGOption: string;
     setSelectedClothesOption: Dispatch<SetStateAction<string>>;
     setSelectedEarsOption: Dispatch<SetStateAction<string>>;
     setSelectedEyesOption: Dispatch<SetStateAction<string>>;
     setSelectedHatOption: Dispatch<SetStateAction<string>>;
     setSelectedMouthOption: Dispatch<SetStateAction<string>>;
     setSelectedTypeOption: Dispatch<SetStateAction<string>>;
+    setSelectedBGOption: Dispatch<SetStateAction<string>>;
     
 }
 
 const defaultConfigurator = {
     legs: "0",
-    selectedClothesOption: "Orange Shirt",
-    selectedEarsOption: "Silver Earring",
+    selectedClothesOption: "None",
+    selectedEarsOption: "None",
     selectedEyesOption: "None",
     selectedHatOption: "None",
     selectedTypeOption: "Alien",
     selectedMouthOption: "None",
+    selectedBGOption: "None",
     setSelectedClothesOption: () => {}, 
     setSelectedEarsOption: () => {}, 
     setSelectedEyesOption: () => {}, 
     setSelectedHatOption: () => {}, 
     setSelectedMouthOption: () => {}, 
     setSelectedTypeOption: () => {}, 
+    setSelectedBGOption: () => {}, 
 }
 
 const ConfiguratorContext = createContext<ConfiguratorContext>(defaultConfigurator);
@@ -46,6 +50,7 @@ export const ConfiguratorProvider: FC<PropsWithChildren> = ({ children }) => {
   const [selectedHatOption, setSelectedHatOption] = useState<string>(defaultConfigurator.selectedHatOption);
   const [selectedMouthOption, setSelectedMouthOption] = useState<string>(defaultConfigurator.selectedMouthOption);
   const [selectedTypeOption, setSelectedTypeOption] = useState<string>(defaultConfigurator.selectedTypeOption);
+  const [selectedBGOption, setSelectedBGOption] = useState<string>(defaultConfigurator.selectedBGOption);
 
   const toggleLegs = () => {
     setLegs(legs);
@@ -62,12 +67,14 @@ export const ConfiguratorProvider: FC<PropsWithChildren> = ({ children }) => {
         selectedHatOption,
         selectedTypeOption,
         selectedMouthOption,
+        selectedBGOption,
         setSelectedClothesOption,
         setSelectedEarsOption,
         setSelectedEyesOption,
         setSelectedHatOption,
         setSelectedMouthOption,
         setSelectedTypeOption,
+        setSelectedBGOption,
       }}
     >
       {children}

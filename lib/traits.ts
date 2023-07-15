@@ -378,5 +378,33 @@ export const traits = [
   {
     "trait_type": "Ears",
     "value": "Silver Earring"
+  },
+  {
+    "trait_type": "Background",
+    "value": "Blue"
+  },
+  {
+    "trait_type": "Background",
+    "value": "Green"
+  },
+  {
+    "trait_type": "Background",
+    "value": "Orange"
+  },
+  {
+    "trait_type": "Background",
+    "value": "Purple"
+  },
+  {
+    "trait_type": "Background",
+    "value": "Yellow"
+  },
+  {
+    "trait_type": "Background",
+    "value": "Red"
+  },
+  {
+    "trait_type": "Background",
+    "value": "None"
   }
 ]

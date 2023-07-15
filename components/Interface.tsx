@@ -26,27 +26,17 @@ export const Interface = () => {
   const {
     legs,
     toggleLegs,
-    selectedClothesOption,
     setSelectedClothesOption,
-    selectedEarsOption,
     setSelectedEarsOption,
-    selectedEyesOption,
     setSelectedEyesOption,
-    selectedHatOption,
     setSelectedHatOption,
-    selectedMouthOption,
     setSelectedMouthOption,
-    selectedTypeOption,
     setSelectedTypeOption,
+    setSelectedBGOption,
   } = useConfigurator();
 
   const handleChange = () => {
-    console.log(selectedClothesOption);
-    console.log(selectedEarsOption);
-    console.log(selectedEyesOption);
-    console.log(selectedHatOption);
-    console.log(selectedMouthOption);
-    console.log(selectedTypeOption);
+
   };
 
   const getClothes = () => {
@@ -66,6 +56,9 @@ export const Interface = () => {
   };
   const getType = () => {
     return traits.filter((item) => item.trait_type == "Type");
+  };
+  const getBG = () => {
+    return traits.filter((item) => item.trait_type == "Background");
   };
 
   const populateClothes = () => {
@@ -141,6 +134,20 @@ export const Interface = () => {
 
   const populateType = () => {
     let item = getType();
+    let sortedItem = item.sort((a, b) => a.value.localeCompare(b.value))
+    let i = 0;
+    return sortedItem.map((trait) => {
+      i++;
+      return (
+        <SelectItem key={i} value={trait.value}>
+          {trait.value}
+        </SelectItem>
+      );
+    });
+  };
+
+  const populateBG = () => {
+    let item = getBG();
     let sortedItem = item.sort((a, b) => a.value.localeCompare(b.value))
     let i = 0;
     return sortedItem.map((trait) => {
@@ -239,6 +246,19 @@ export const Interface = () => {
                   <SelectContent position="popper">
                     <ScrollArea className="h-74  rounded-md border">
                       {populateType()}
+                    </ScrollArea>
+                  </SelectContent>
+                </SelectTrigger>
+              </Select>
+            </div>
+            <div className="flex flex-col space-y-1.5">
+              <Label htmlFor="name">Background</Label>
+              <Select onValueChange={setSelectedBGOption}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Select" />
+                  <SelectContent position="popper">
+                    <ScrollArea className="h-42 rounded-md border">
+                      {populateBG()}
                     </ScrollArea>
                   </SelectContent>
                 </SelectTrigger>
