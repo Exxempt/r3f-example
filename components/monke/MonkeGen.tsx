@@ -2391,7 +2391,29 @@ export const MonkeEyes: FC<Props> = ({ x }) => {
     if (x == "Laser Eyes") {
       return (
         <>
-          <Box position={[-4, -1, 0]} color="#c5cfcb" />
+          <Box position={[0, 1, 0]} color="#bb3d57" />
+          <Box position={[1, 1, 0]} color="#ff0000" />
+          <Box position={[2, 1, 0]} color="#bb3d57" />
+          <Box position={[3, 1, 0]} color="#bb3d57" />
+          <Box position={[4, 1, 0]} color="#ff0000" />
+          <Box position={[5, 1, 0]} color="#bb3d57" />
+
+          <Box position={[-1, 0, 0]} color="#ff0000" />
+          <Box position={[0, 0, 0]} color="#ff0000" />
+          <Box position={[1, 0, 0]} color="#f2d65e" />
+          <Box position={[2, 0, 0]} color="#ff0000" />
+          <Box position={[3, 0, 0]} color="#ff0000" />
+          <Box position={[4, 0, 0]} color="#f2d65e" />
+          <Box position={[5, 0, 0]} color="#ff0000" />
+          <Box position={[6, 0, 0]} color="#ff0000" />
+          <Box position={[7, 0, 0]} color="#ff0000" />
+
+          <Box position={[0, -1, 0]} color="#bb3d57" />
+          <Box position={[1, -1, 0]} color="#ff0000" />
+          <Box position={[2, -1, 0]} color="#bb3d57" />
+          <Box position={[3, -1, 0]} color="#bb3d57" />
+          <Box position={[4, -1, 0]} color="#ff0000" />
+          <Box position={[5, -1, 0]} color="#bb3d57" />
         </>
       );
     }
@@ -2441,7 +2463,86 @@ export const MonkeEyes: FC<Props> = ({ x }) => {
     if (x == "Vipers") {
       return (
         <>
-          <Box position={[-4, -1, 0]} color="#c5cfcb" />
+          <Box position={[-2, 2, 0]} color="#1a2c37" />
+          <Box position={[-1, 2, 0]} color="#1a2c37" />
+          <Box position={[-0, 2, 0]} color="#1a2c37" />
+          <Box position={[1, 2, 0]} color="#1a2c37" />
+          <Box position={[2, 2, 0]} color="#1a2c37" />
+          <Box position={[3, 2, 0]} color="#1a2c37" />
+          <Box position={[4, 2, 0]} color="#1a2c37" />
+          <Box position={[5, 2, 0]} color="#1a2c37" />
+          <Box position={[6, 2, 0]} color="#1a2c37" />
+          <Box position={[-3, 1, 0]} color="#1a2c37" />
+          <Box position={[-2, 1, 0]} color="#5cb9d3" />
+          <Box position={[-1, 1, 0]} color="#7ac233" />
+          <Box position={[0, 1, 0]} color="#f3d65e" />
+          <Box position={[1, 1, 0]} color="#ee9e2e" />
+          <Box position={[2, 1, 0]} color="#f34949" />
+          <Box position={[3, 1, 0]} color="#ee9e2e" />
+          <Box position={[4, 1, 0]} color="#f3d65e" />
+          <Box position={[5, 1, 0]} color="#7ac233" />
+          <Box position={[6, 1, 0]} color="#5cb9d3" />
+          <Box position={[-5, 0, 0]} color="#1a2c37" />
+          <Box position={[-4, 0, 0]} color="#1a2c37" />
+          <Box position={[-2, 0, 0]} color="#5cb9d3" />
+          <Box position={[-1, 0, 0]} color="#7ac233" />
+          <Box position={[0, 0, 0]} color="#f3d65e" />
+          <Box position={[1, 0, 0]} color="#ee9e2e" />
+          <Box position={[2, 0, 0]} color="#f34949" />
+          <Box position={[3, 0, 0]} color="#ee9e2e" />
+          <Box position={[4, 0, 0]} color="#f3d65e" />
+          <Box position={[5, 0, 0]} color="#7ac233" />
+          <Box position={[6, 0, 0]} color="#5cb9d3" />
+          <Box position={[-1, -1, 0]} color="#7ac233" />
+          <Box position={[0, -1, 0]} color="#f3d65e" />
+          <Box position={[1, -1, 0]} color="#ee9e2e" />
+          <Box position={[3, -1, 0]} color="#ee9e2e" />
+          <Box position={[4, -1, 0]} color="#f3d65e" />
+          <Box position={[5, -1, 0]} color="#7ac233" />
+
+        </>
+      );
+    }
+    if (x == "Solana Vipers") {
+      return (
+        <>
+          <Box position={[-2, 2, 0]} color="#1a2c37" />
+          <Box position={[-1, 2, 0]} color="#1a2c37" />
+          <Box position={[-0, 2, 0]} color="#1a2c37" />
+          <Box position={[1, 2, 0]} color="#1a2c37" />
+          <Box position={[2, 2, 0]} color="#1a2c37" />
+          <Box position={[3, 2, 0]} color="#1a2c37" />
+          <Box position={[4, 2, 0]} color="#1a2c37" />
+          <Box position={[5, 2, 0]} color="#1a2c37" />
+          <Box position={[6, 2, 0]} color="#1a2c37" />
+          <Box position={[-3, 1, 0]} color="#1a2c37" />
+          <Box position={[-2, 1, 0]} color="#e368f7" />
+          <Box position={[-1, 1, 0]} color="#a98ce5" />
+          <Box position={[0, 1, 0]} color="#6cb3d2" />
+          <Box position={[1, 1, 0]} color="#34d7c0" />
+          <Box position={[2, 1, 0]} color="#0af2b4" />
+          <Box position={[3, 1, 0]} color="#34d7c0" />
+          <Box position={[4, 1, 0]} color="#6cb3d2" />
+          <Box position={[5, 1, 0]} color="#a98ce5" />
+          <Box position={[6, 1, 0]} color="#e368f7" />
+          <Box position={[-5, 0, 0]} color="#1a2c37" />
+          <Box position={[-4, 0, 0]} color="#1a2c37" />
+          <Box position={[-2, 0, 0]} color="#e368f7" />
+          <Box position={[-1, 0, 0]} color="#a98ce5" />
+          <Box position={[0, 0, 0]} color="#6cb3d2" />
+          <Box position={[1, 0, 0]} color="#34d7c0" />
+          <Box position={[2, 0, 0]} color="#0af2b4" />
+          <Box position={[3, 0, 0]} color="#34d7c0" />
+          <Box position={[4, 0, 0]} color="#6cb3d2" />
+          <Box position={[5, 0, 0]} color="#a98ce5" />
+          <Box position={[6, 0, 0]} color="#e368f7" />
+          <Box position={[-1, -1, 0]} color="#a98ce5" />
+          <Box position={[0, -1, 0]} color="#6cb3d2" />
+          <Box position={[1, -1, 0]} color="#34d7c0" />
+          <Box position={[3, -1, 0]} color="#34d7c0" />
+          <Box position={[4, -1, 0]} color="#6cb3d2" />
+          <Box position={[5, -1, 0]} color="#a98ce5" />
+
         </>
       );
     }

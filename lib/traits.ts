@@ -372,6 +372,10 @@ export const traits = [
     "value": "Purple Glasses"
   },
   {
+    "trait_type": "Eyes",
+    "value": "Solana Vipers"
+  },
+  {
     "trait_type": "Hat",
     "value": "Strawhat"
   },
