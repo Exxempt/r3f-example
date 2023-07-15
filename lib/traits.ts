@@ -200,6 +200,10 @@ export const traits = [
     "value": "Protagonist White Hat"
   },
   {
+    "trait_type": "Hat",
+    "value": "Solana Backwards Cap"
+  },
+  {
     "trait_type": "Eyes",
     "value": "Gold Glasses"
   },
