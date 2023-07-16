@@ -384,6 +384,18 @@ export const traits = [
     "value": "Black Top Hat"
   },
   {
+    "trait_type": "Hat",
+    "value": "Firefighter Hat"
+  },
+  {
+    "trait_type": "Hat",
+    "value": "Space Warrior Hair"
+  },
+  {
+    "trait_type": "Hat",
+    "value": "Flower"
+  },
+  {
     "trait_type": "Ears",
     "value": "Silver Earring"
   },

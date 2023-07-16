@@ -161,7 +161,8 @@ export const Interface = () => {
   };
 
   return (
-    <Card className="w-[350px]">
+    <Card className="">
+    {/* <Card className="w-[350px]"> */}
       <CardHeader>
         <CardTitle>SMB</CardTitle>
         <CardDescription>Select or design your SMB Gen2.</CardDescription>
