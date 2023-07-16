@@ -380,6 +380,10 @@ export const traits = [
     "value": "Strawhat"
   },
   {
+    "trait_type": "Hat",
+    "value": "Black Top Hat"
+  },
+  {
     "trait_type": "Ears",
     "value": "Silver Earring"
   },

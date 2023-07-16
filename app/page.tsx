@@ -51,6 +51,7 @@ export default function Home() {
       }
     }
   }
+
   if (save !== selectedBGOption) {
     checkBGselection()
     setSave(selectedBGOption)
