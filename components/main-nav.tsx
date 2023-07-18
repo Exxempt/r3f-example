@@ -27,7 +27,7 @@ export function MainNav() {
             pathname === "/docs" ? "text-foreground" : "text-foreground/60"
           )}
         >
-          Link 1
+          Generator
         </Link>
         <Link
           href="/docs/components"
@@ -38,26 +38,7 @@ export function MainNav() {
               : "text-foreground/60"
           )}
         >
-          Link 2
-        </Link>
-        <Link
-          href="/examples"
-          className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/examples")
-              ? "text-foreground"
-              : "text-foreground/60"
-          )}
-        >
-          Link 3
-        </Link>
-        <Link
-          href={siteConfig.links.github}
-          className={cn(
-            "hidden text-foreground/60 transition-colors hover:text-foreground/80 lg:block"
-          )}
-        >
-          Link 4
+          Playground
         </Link>
       </nav>
     </div>

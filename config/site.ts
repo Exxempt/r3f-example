@@ -1,12 +1,12 @@
 export const siteConfig = {
-    name: "testing shadcn/ui",
-    url: "https://ui.shadcn.com",
-    ogImage: "https://ui.shadcn.com/og.jpg",
+    name: "SMB-3D",
+    url: "https://exxempt.dev",
+    ogImage: "https://avatars.githubusercontent.com/u/46376436?v=4",
     description:
       "Beautifully designed components built with Radix UI and Tailwind CSS.",
     links: {
-      twitter: "https://twitter.com/shadcn",
-      github: "https://github.com/shadcn/ui",
+      twitter: "https://twitter.com/exxemptdev",
+      github: "https://github.com/exxempt",
     },
   }
   
