@@ -76,3 +76,31 @@
     @apply bg-background text-foreground;
   }
 }
+
+@media screen and (min-width: 100px) and (max-width:480px) {
+  .overlap {
+    display: initial;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .overlap {
+    display: initial;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .overlap {
+    display: flex
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1568px) {
+  .overlap {
+    display: flex
+  }
+}
+@media screen and (min-width: 1569px) {
+  .overlap {
+    display: flex
+  }
+
+}
