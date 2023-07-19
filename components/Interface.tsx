@@ -161,7 +161,7 @@ export const Interface = () => {
   };
 
   return (
-    <Card className="wrap">
+    <Card className="">
     {/* <Card className="w-[350px]"> */}
       <CardHeader>
         <CardTitle>SMB</CardTitle>
