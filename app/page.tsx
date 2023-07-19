@@ -10,6 +10,7 @@ import { MonkeEars, MonkeMouth, MonkeType, MonkeHat, MonkeClothes, MonkeEyes } f
 import { PivotControls } from '../components/pivotControls/index'
 import { useControls, button, buttonGroup, folder } from 'leva'
 import { traits } from "@/lib/traits";
+import { SheetDemo } from '@/components/SheetDemo';
 
 export default function Home() {
   const {
@@ -130,8 +131,6 @@ const options = toggle ? ['foo', 'bar'] : ['x', 'y', 'z']
           <spotLight position={[10, 10, 10]} angle={0.15} penumbra={5} shadow-mapSize={2048} castShadow />
           <pointLight position={[-10, -10, -10]} />
 
-
-
           {/* <OrbitControls /> */}
           {/* <OrbitControls makeDefault rotateSpeed={2} minPolarAngle={Math.PI / 2.5} maxPolarAngle={Math.PI / 1.5} /> */}
 
@@ -173,7 +172,9 @@ const options = toggle ? ['foo', 'bar'] : ['x', 'y', 'z']
           {/* <Environment preset="sunset" /> */}
           {/* <Sky /> */}
         </Canvas>
-        <Interface />
+      {/* <Interface /> */}
+
+        < SheetDemo />
       </div>
     </main>
   )

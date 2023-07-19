@@ -160,7 +160,8 @@ export const Interface = () => {
     });
   };
 
-  return (
+    return (
+<div>
     <Card className="">
     {/* <Card className="w-[350px]"> */}
       <CardHeader>
@@ -273,6 +274,7 @@ export const Interface = () => {
         <Button onClick={handleChange}>Generate</Button>
       </CardFooter>
     </Card>
+</div>
   );
 };
 
