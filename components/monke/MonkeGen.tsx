@@ -6077,6 +6077,9 @@ export const MonkeType: FC<Props> = ({ x }) => {
         </>
       );
     }
+    if (x == "None") {
+      return <></>
+    }
   };
   return <>{generateType()}</>;
 };

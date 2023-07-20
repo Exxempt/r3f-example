@@ -196,6 +196,10 @@ export const traits = [
     "value": "Solana"
   },
   {
+    "trait_type": "Type",
+    "value": "None"
+  },
+  {
     "trait_type": "Hat",
     "value": "Protagonist White Hat"
   },
