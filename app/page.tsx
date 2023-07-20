@@ -172,7 +172,7 @@ const options = toggle ? ['foo', 'bar'] : ['x', 'y', 'z']
           {/* <Environment preset="sunset" /> */}
           {/* <Sky /> */}
         </Canvas>
-      {/* <Interface /> */}
+      <Interface />
 
         < SheetDemo />
       </div>

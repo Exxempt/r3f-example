@@ -168,6 +168,7 @@ export function SheetDemo() {
         });
       };
   return (
+    <div className="lg:hidden absolute bottom-0">
     <Sheet>
       <SheetTrigger asChild>
 <div className="flex flex-col space-y-1.5">
@@ -186,7 +187,7 @@ export function SheetDemo() {
         <Card className="">
         <CardContent>
             <form>
-            <div className="grid w-full items-center gap-4">
+            <div className="grid w-full items-center gap-4 pt-2">
                 <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="name">Monke #</Label>
                 <Input id="name" placeholder="4496" />
@@ -295,5 +296,6 @@ export function SheetDemo() {
       </SheetContent>
 </ScrollArea>
     </Sheet>
+    </div>
   )
 }

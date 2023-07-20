@@ -162,7 +162,7 @@ export const Interface = () => {
 
     return (
 <div>
-    <Card className="">
+    <Card className="hidden lg:block absolute bottom-0 right-0 ">
     {/* <Card className="w-[350px]"> */}
       <CardHeader>
         <CardTitle>SMB</CardTitle>

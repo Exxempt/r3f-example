@@ -2,20 +2,17 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
 import Image from "next/image"
-
+import { usePathname } from "next/navigation"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
-import { Icons } from "@/components/icons"
 
 export function MainNav() {
   const pathname = usePathname()
 
   return (
-    <div className="mr-4 flex">
+    <div className="mr-2 flex">
       <Link href="/" className="mr-6 flex items-center space-x-2">
-        {/* <Icons.logo className="h-6 w-6" /> */}
         <Image src="/3d-light.png" alt="3d-light" height="24" width="24"/>
         <span className="font-bold sm:inline-block">
           {siteConfig.name}
