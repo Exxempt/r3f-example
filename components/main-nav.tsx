@@ -20,19 +20,19 @@ export function MainNav() {
       </Link>
       <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
         <Link
-          href="/docs"
+          href="/"
           className={cn(
             "transition-colors hover:text-foreground/80",
-            pathname === "/docs" ? "text-foreground" : "text-foreground/60"
+            pathname === "/" ? "text-foreground" : "text-foreground/60"
           )}
         >
-          Generator
+         Monke 
         </Link>
         <Link
-          href="/docs/components"
+          href="/playground"
           className={cn(
             "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/docs/components")
+            pathname?.startsWith("/playground")
               ? "text-foreground"
               : "text-foreground/60"
           )}
