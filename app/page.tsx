@@ -9,7 +9,6 @@ import { useConfigurator } from "../contexts/Configurator";
 import { MonkeEars, MonkeMouth, MonkeType, MonkeHat, MonkeClothes, MonkeEyes } from '@/components/monke/MonkeGen';
 import { PivotControls } from '../components/pivotControls/index'
 import { useControls, button, buttonGroup, folder } from 'leva'
-import { traits } from "@/lib/traits";
 import { SheetDemo } from '@/components/SheetDemo';
 
 export default function Home() {
@@ -26,15 +25,6 @@ export default function Home() {
   const [attach, setAttach] = useState<string>('');
   const [args, setArgs] = useState<string>('');
   const [save, setSave] = useState<string>('')
-
-
-  // traits.filter((item) => item.trait_type == "Background")
-
-  // const values = (traits:string) => {
-  //   useControls({
-  //     foo: traits,
-  //   })
-  // }
 
   function checkBGselection() {
     if (selectedBGOption == "None") {
@@ -108,8 +98,6 @@ const options = toggle ? ['foo', 'bar'] : ['x', 'y', 'z']
   //   ),
   // })
 
-
-
   return (
 
     <main className="flex min-h-screen flex-col items-center justify-between p-9" >
@@ -152,7 +140,7 @@ const options = toggle ? ['foo', 'bar'] : ['x', 'y', 'z']
           </mesh>
       </PivotControls> */}
 
-          <PivotControls visible={true} rotation={[0, -Math.PI / 2, 0]} anchor={[1, -1, -1]} scale={75} depthTest={false} fixed lineWidth={2}>
+          <PivotControls visible={false} rotation={[0, -Math.PI / 2, 0]} anchor={[1, -1, -1]} scale={75} depthTest={false} fixed lineWidth={2}>
             <mesh castShadow receiveShadow position={[-1, 0.5, 1]}>
               <MonkeType x={selectedTypeOption} />
               <MonkeEars x={selectedEarsOption} />

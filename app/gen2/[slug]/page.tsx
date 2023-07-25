@@ -95,7 +95,7 @@ export default function Page({ params }: { params: { slug: string } }) {
           </mesh>
       </PivotControls> */}
 
-          <PivotControls visible={true} rotation={[0, -Math.PI / 2, 0]} anchor={[1, -1, -1]} scale={75} depthTest={false} fixed lineWidth={2}>
+          <PivotControls visible={false} rotation={[0, -Math.PI / 2, 0]} anchor={[1, -1, -1]} scale={75} depthTest={false} fixed lineWidth={2}>
             <mesh castShadow receiveShadow position={[-1, 0.5, 1]}>
               <MonkeType x={monke!.type} />
               <MonkeEars x={monke!.ears} />
