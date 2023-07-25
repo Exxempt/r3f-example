@@ -733,6 +733,78 @@ export const MonkeClothes: FC<Props> = ({ x }) => {
     if (x == "Military Vest") {
       return (
         <>
+          <Box position={[-3, -5, 0]} color='#0e1a38' />
+          <Box position={[-2, -5, 0]} color='#0e1a38' />
+
+          <Box position={[-4, -6, 0]} color='#0e1a38' />
+          <Box position={[-3, -6, 0]} color='#35371e' />
+          <Box position={[-2, -6, 0]} color='#aeb34f' />
+          <Box position={[-1, -6, 0]} color='#0e1a38' />
+          <Box position={[0, -6, 0]} color='#0e1a38' />
+          <Box position={[1, -6, 0]} color='#0e1a38' />
+          <Box position={[2, -6, 0]} color='#0e1a38' />
+          <Box position={[3, -6, 0]} color='#0e1a38' />
+          <Box position={[4, -6, 0]} color='#0e1a38' />
+
+          <Box position={[-5, -7, 0]} color='#0e1a38' />
+          <Box position={[-4, -7, 0]} color='#35371e' />
+          <Box position={[-3, -7, 0]} color='#637938' />
+          <Box position={[-2, -7, 0]} color='#637938' />
+          <Box position={[-1, -7, 0]} color='#aeb34f' />
+          <Box position={[0, -7, 0]} color='#70642b' />
+          <Box position={[1, -7, 0]} color='#0e1a38' />
+          <Box position={[2, -7, 0]} color='#aeb34f' />
+          <Box position={[3, -7, 0]} color='#484a28' />
+          <Box position={[4, -7, 0]} color='#484a28' />
+          <Box position={[5, -7, 0]} color='#0e1a38' />
+
+          <Box position={[-6, -8, 0]} color='#0e1a38' />
+          <Box position={[-5, -8, 0]} color='#84883c' />
+          <Box position={[-4, -8, 0]} color='#aeb34f' />
+          <Box position={[-3, -8, 0]} color='#70642b' />
+          <Box position={[-2, -8, 0]} color='#637938' />
+          <Box position={[-1, -8, 0]} color='#0e1a38' />
+          <Box position={[0, -8, 0]} color='#aeb34f' />
+          <Box position={[1, -8, 0]} color='#637938' />
+          <Box position={[2, -8, 0]} color='#0e1a38' />
+          <Box position={[3, -8, 0]} color='#637938' />
+          <Box position={[4, -8, 0]} color='#4b5e2c' />
+          <Box position={[5, -8, 0]} color='#484a28' />
+          <Box position={[6, -8, 0]} color='#0e1a38' />
+
+          <Box position={[-7, -9, 0]} color='#0e1a38' />
+          <Box position={[-6, -9, 0]} color='#35371e' />
+          <Box position={[-5, -9, 0]} color='#484a28' />
+          <Box position={[-4, -9, 0]} color='#70642b' />
+          <Box position={[-3, -9, 0]} color='#637938' />
+          <Box position={[-2, -9, 0]} color='#4b5e2c' />
+          <Box position={[-1, -9, 0]} color='#aeb34f' />
+          <Box position={[0, -9, 0]} color='#0e1a38' />
+          <Box position={[1, -9, 0]} color='#aeb34f' />
+          <Box position={[2, -9, 0]} color='#637938' />
+          <Box position={[3, -9, 0]} color='#0e1a38' />
+          <Box position={[4, -9, 0]} color='#aeb34f' />
+          <Box position={[5, -9, 0]} color='#637938' />
+          <Box position={[6, -9, 0]} color='#70642b' />
+          <Box position={[7, -9, 0]} color='#0e1a38' />
+
+          <Box position={[-8, -10, 0]} color='#0e1a38' />
+          <Box position={[-7, -10, 0]} color='#35371e' />
+          <Box position={[-6, -10, 0]} color='#484a28' />
+          <Box position={[-5, -10, 0]} color='#637938' />
+          <Box position={[-4, -10, 0]} color='#637938' />
+          <Box position={[-3, -10, 0]} color='#aeb34f' />
+          <Box position={[-2, -10, 0]} color='#70642b' />
+          <Box position={[-1, -10, 0]} color='#70642b' />
+          <Box position={[0, -10, 0]} color='#0e1a38' />
+          <Box position={[1, -10, 0]} color='#484a28' />
+          <Box position={[2, -10, 0]} color='#484a28' />
+          <Box position={[3, -10, 0]} color='#70642b' />
+          <Box position={[4, -10, 0]} color='#70642b' />
+          <Box position={[5, -10, 0]} color='#637938' />
+          <Box position={[6, -10, 0]} color='#637938' />
+          <Box position={[7, -10, 0]} color='#aeb34f' />
+          <Box position={[8, -10, 0]} color='#0e1a38' />
         </>
       );
     }
