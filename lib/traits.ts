@@ -181,6 +181,10 @@ export const traits = [
   },
   {
     "trait_type": "Clothes",
+    "value": "Diamond"
+  },
+  {
+    "trait_type": "Clothes",
     "value": "Poncho"
   },
   {
@@ -202,6 +206,14 @@ export const traits = [
   {
     "trait_type": "Hat",
     "value": "Protagonist White Hat"
+  },
+  {
+    "trait_type": "Hat",
+    "value": "Sailor Cap"
+  },
+  {
+    "trait_type": "Hat",
+    "value": "Crown"
   },
   {
     "trait_type": "Hat",
