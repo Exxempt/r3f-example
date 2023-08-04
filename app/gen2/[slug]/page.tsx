@@ -74,28 +74,7 @@ export default function Page({ params }: { params: { slug: string } }) {
           <spotLight position={[10, 10, 10]} angle={0.15} penumbra={5} shadow-mapSize={2048} castShadow />
           <pointLight position={[-10, -10, -10]} />
 
-          {/* <OrbitControls /> */}
-          {/* <OrbitControls makeDefault rotateSpeed={2} minPolarAngle={Math.PI / 2.5} maxPolarAngle={Math.PI / 1.5} /> */}
-
-          {/* <Monke /> */}
-          {/* <MonkeTemp /> */}
-          {/* <MonkeType x={selectedTypeOption} />
-  <MonkeEars x={selectedEarsOption} />  
-  <MonkeMouth x={selectedMouthOption} />
-  <MonkeHat x={selectedHatOption} />
-  <MonkeClothes x={selectedClothesOption} /> */}
-
           {/* <PivotControls visible={false} rotation={[0, -Math.PI / 2, 0]} anchor={[1, -1, -1]} scale={75} depthTest={false} fixed lineWidth={2}>
-        <mesh castShadow receiveShadow position={[-1, 0.5, 1]}>
-          <MonkeType x={selectedTypeOption} />
-          <MonkeEars x={selectedEarsOption} />  
-          <MonkeMouth x={selectedMouthOption} />
-          <MonkeHat x={selectedHatOption} />
-          <MonkeClothes x={selectedClothesOption} />
-          </mesh>
-      </PivotControls> */}
-
-          <PivotControls visible={false} rotation={[0, -Math.PI / 2, 0]} anchor={[1, -1, -1]} scale={75} depthTest={false} fixed lineWidth={2}>
             <mesh castShadow receiveShadow position={[-1, 0.5, 1]}>
               <MonkeType x={monke!.type} />
               <MonkeEars x={monke!.ears} />
@@ -104,7 +83,21 @@ export default function Page({ params }: { params: { slug: string } }) {
               <MonkeHat x={monke!.hat} />
               <MonkeClothes x={monke!.clothes} />
             </mesh>
-          </PivotControls>
+          </PivotControls> */}
+
+      <PresentationControls
+        config={{ mass: 2, tension: 500 }}
+        snap={{ mass: 4, tension: 1500 }}
+        rotation={[0, 0.3, 0]}
+        polar={[-Math.PI / 3, Math.PI / 3]}
+        azimuth={[-Math.PI / 1.4, Math.PI / 2]}>
+              <MonkeType x={monke!.type} />
+              <MonkeEars x={monke!.ears} />
+              <MonkeEyes x={monke!.eyes} />
+              <MonkeMouth x={monke!.mouth} />
+              <MonkeHat x={monke!.hat} />
+              <MonkeClothes x={monke!.clothes} />
+      </PresentationControls>
 
           <GizmoHelper alignment="bottom-right" margin={[100, 100]}>
             <GizmoViewport labelColor="white" axisHeadScale={1} />

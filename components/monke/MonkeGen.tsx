@@ -31,7 +31,6 @@ export const MonkeClothes: FC<Props> = ({ x }) => {
           <Box position={[3, -9, 0]} color="#97843a" />
 
           <Box position={[2, -10, 0]} color="#97843a" />
-
         </>
       );
     }
