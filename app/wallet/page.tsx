@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { getTokenAccounts } from "@/lib/solana";
  
 export default function WalletPage() {
-    // const rpcEndpoint = 'https://soft-little-leaf.solana-mainnet.quiknode.pro/bf7cebd749826d1eaac301132606f76313cb871c/';
+    // const rpcEndpoint = '';
     // const solanaConnection = new Connection(rpcEndpoint);
     const walletToQuery = 'BRW9F17ScjfhzagtCktNiJR4iKMVfav9U6tusPwxz7XP';
     const onClick = () => {

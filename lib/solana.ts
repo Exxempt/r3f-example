@@ -6,7 +6,7 @@ export async function getTokenAccounts(
   wallet: string,
   // solanaConnection: Connection
 ) {
-   const rpcEndpoint = 'https://soft-little-leaf.solana-mainnet.quiknode.pro/bf7cebd749826d1eaac301132606f76313cb871c/';
+   const rpcEndpoint = 'RPC_URL';
    const solanaConnection = new Connection(rpcEndpoint);
   const filters: GetProgramAccountsFilter[] = [
     {
