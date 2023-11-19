@@ -2,12 +2,14 @@ import { Connection, GetProgramAccountsFilter } from "@solana/web3.js";
 import { TOKEN_PROGRAM_ID } from "@solana/spl-token";
 import { metadata } from "../lib/metadata";
 
+
 export async function getTokenAccounts(
   wallet: string,
   // solanaConnection: Connection
 ) {
    const rpcEndpoint = 'RPC_URL';
-   const solanaConnection = new Connection(rpcEndpoint);
+   //const solanaConnection = new Connection(process.env.RPC_SERVER as string);
+   const solanaConnection = new Connection("https://soft-little-leaf.solana-mainnet.quiknode.pro/bf7cebd749826d1eaac301132606f76313cb871c/");
   const filters: GetProgramAccountsFilter[] = [
     {
       dataSize: 165, //size of account (bytes)
