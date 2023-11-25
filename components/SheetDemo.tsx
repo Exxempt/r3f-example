@@ -166,7 +166,7 @@ export function SheetDemo() {
     });
   };
   return (
-    <div className="lg:hidden absolute bottom-0">
+    <div className="lg:hidden sticky bottom-0">
       <Sheet>
         <SheetTrigger asChild>
           <div className="flex flex-col space-y-1.5">
@@ -289,7 +289,7 @@ export function SheetDemo() {
             <SheetFooter>
               <SheetClose asChild>
                 <Button variant="outline" onClick={handleChange}>
-                  Reset
+                 Return 
                 </Button>
               </SheetClose>
             </SheetFooter>

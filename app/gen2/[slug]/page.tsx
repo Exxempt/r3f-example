@@ -99,9 +99,9 @@ export default function Page({ params }: { params: { slug: string } }) {
               <MonkeClothes x={monke!.clothes} />
       </PresentationControls>
 
-          <GizmoHelper alignment="bottom-right" margin={[100, 100]}>
+          {/* <GizmoHelper alignment="bottom-right" margin={[100, 100]}>
             <GizmoViewport labelColor="white" axisHeadScale={1} />
-          </GizmoHelper>
+          </GizmoHelper> */}
 
           <OrbitControls makeDefault />
           {/* <ContactShadows position={[0, -1.4, 0]} opacity={0.75} scale={10} blur={2.5} far={4} /> */}

@@ -162,10 +162,11 @@ export const Interface = () => {
 
     return (
 <div>
-    <Card className="hidden lg:block absolute bottom-0 right-0 ">
+    {/* <Card className="hidden lg:block absolute bottom-0 right-0 "> */}
+    <Card className="hidden lg:block ">
     {/* <Card className="w-[350px]"> */}
       <CardHeader>
-        <CardTitle>SMB</CardTitle>
+        <CardTitle></CardTitle>
         <CardDescription>Select or design your SMB Gen2.</CardDescription>
       </CardHeader>
       <CardContent>
