@@ -29,6 +29,13 @@ export function Box(props: ComponentProps) {
     >
       <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial color={hovered ? "white" : props.color} />
+      
+      <meshBasicMaterial attach={"material-0"} color={props.color}/>
+      <meshBasicMaterial attach={"material-1"} color={props.color}/>
+      <meshBasicMaterial attach={"material-2"} color={props.color}/>
+      <meshBasicMaterial attach={"material-3"} color={props.color}/>
+      <meshBasicMaterial attach={"material-4"} color={props.color}/>
+      <meshBasicMaterial attach={"material-5"} color={props.color}/>
     </mesh>
   );
 }
