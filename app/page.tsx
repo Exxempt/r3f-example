@@ -63,6 +63,10 @@ export default function Home() {
 const [toggle, setToggle] = React.useState(true)
 const options = toggle ? ['foo', 'bar'] : ['x', 'y', 'z']
 
+const mainContentStyle = {
+  height: 'calc(100vh - 55px)', // Adjust 60px to your navbar height
+};
+
 // const values = useControls(
 //   {
 //     select: { value: options[0], options: options },
@@ -99,15 +103,17 @@ const options = toggle ? ['foo', 'bar'] : ['x', 'y', 'z']
   // })
 
   return (
-
+    <main className="container w-screen h-screen flex" style={mainContentStyle} >
+    <div className=" sm:block sm:w-100 lg:w-3/4">
+{/**
     <main className="flex min-h-screen flex-col items-center justify-between p-9" >
-      <div className="relative overlap place-items-center before:absolute before:h-[600px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]" style={{ width: "100vw", height: `calc(100vh - 150px)` }}>
+      <div className="relative overlap place-items-center before:absolute before:h-[600px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]" style={{ width: "100vw", height: `calc(100vh - 150px)` }}>*/}
         {/** relative flex place-items-center */}
         {/* <div>
       Hey {name}, hello! {aNumber}
     </div> */}
         {/* <Interface /> */}
-        <Canvas className='wrap'
+        <Canvas className=''
           // flat dpr={[1, 2]} 
           camera={{
             position: [0, 0, 75],
@@ -160,10 +166,11 @@ const options = toggle ? ['foo', 'bar'] : ['x', 'y', 'z']
           {/* <Environment preset="sunset" /> */}
           {/* <Sky /> */}
         </Canvas>
-      <Interface />
-
         < SheetDemo />
-      </div>
+        </div>
+        <div className="hidden sm:w-0 md:block md:w-1/4">
+          <Interface />
+        </div>
     </main>
   )
 }

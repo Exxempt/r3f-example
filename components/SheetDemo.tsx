@@ -1,3 +1,6 @@
+"use client"
+import React, { useState, ChangeEvent, FormEvent } from 'react';
+import { useRouter } from 'next/navigation';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -165,6 +168,18 @@ export function SheetDemo() {
       );
     });
   };
+
+  const [number, setNumber] = useState<string>('');
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setNumber(e.target.value);
+  };
+  const router = useRouter();
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+      e.preventDefault(); // Prevents the default form submit action
+      router.push(`/gen2/${number}`); // Redirects to the new URL
+  };
+
   return (
     <div className="lg:hidden sticky bottom-0">
       <Sheet>
@@ -184,11 +199,11 @@ export function SheetDemo() {
             {/* <ScrollArea className="h-74  rounded-md border">           */}
             <Card className="">
               <CardContent>
-                <form>
+                <form onSubmit={handleSubmit}>
                   <div className="grid w-full items-center gap-4 pt-2">
                     <div className="flex flex-col space-y-1.5">
                       <Label htmlFor="name">Monke #</Label>
-                      <Input id="name" placeholder="4496" />
+                      <Input id="name" placeholder="4496" value={number} onChange={handleInputChange}/>
                     </div>
                     <div className="flex flex-col space-y-1.5">
                       <Label htmlFor="name">Clothes</Label>

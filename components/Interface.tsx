@@ -1,5 +1,7 @@
 "use client";
 
+import React, { useState, ChangeEvent, FormEvent } from 'react';
+import { useRouter } from 'next/navigation';
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -160,6 +162,17 @@ export const Interface = () => {
     });
   };
 
+  const [number, setNumber] = useState<string>('');
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setNumber(e.target.value);
+  };
+  const router = useRouter();
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+      e.preventDefault(); // Prevents the default form submit action
+      router.push(`/gen2/${number}`); // Redirects to the new URL
+  };
+
     return (
 <div>
     {/* <Card className="hidden lg:block absolute bottom-0 right-0 "> */}
@@ -170,11 +183,11 @@ export const Interface = () => {
         <CardDescription>Select or design your SMB Gen2.</CardDescription>
       </CardHeader>
       <CardContent>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="grid w-full items-center gap-4">
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="name">Monke #</Label>
-              <Input id="name" placeholder="4496" />
+              <Input id="name" placeholder="4496" value={number} onChange={handleInputChange}/>
             </div>
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="name">Clothes</Label>
