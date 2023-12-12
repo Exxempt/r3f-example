@@ -35,7 +35,6 @@
  
     --radius: 0.5rem;
   }
- 
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -76,7 +75,6 @@
     @apply bg-background text-foreground;
   }
 }
-
 @media screen and (min-width: 100px) and (max-width:480px) {
   .overlap {
     display: initial;
@@ -84,7 +82,6 @@
     padding-right: 25px;
   }
 }
-
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .overlap {
     display: initial;
@@ -111,4 +108,27 @@
     padding-right: 25px;
   }
 
+}
+
+.input-rectangle-container {
+  position: fixed; /* Fixed positioning relative to the viewport */
+  top: 60px; /* Distance from the top of the screen */
+  left: 50%; /* Centers horizontally */
+  transform: translateX(-50%); /* Adjusts for the width of the element itself */
+  z-index: 10; /* Ensures it stays above the canvas */
+}
+
+.input-rectangle {
+  width: 300px; /* Adjust width as needed */
+  height: 30px; /* Adjust height as needed */
+  border-radius: 25px 25px 25px 25px; /* Rounded edges on the left and right */
+  border: 2px solid #fff; /* Style the border as needed */
+  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
+  text-align: center;
+  line-height: 50px; /* Vertically centers the text */
+  color: #333; /* Text color */
+  font-size: 16px; /* Adjust font size as needed */
+  outline: none; /* Removes the default focus outline */
+  padding-left: 10px; /* Padding for text inside the input */
+  padding-right: 10px;
 }
