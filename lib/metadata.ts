@@ -316,7 +316,7 @@ export const metadata = [
     mouth: "None",
     hat: "Blue Punk Hair",
     type: "Red",
-    background: "",
+    background: "White",
   },
   {
     id: "3105",
@@ -2813,7 +2813,7 @@ export const metadata = [
     mouth: "None",
     hat: "None",
     type: "Dark",
-    background: "",
+    background: "Purple",
   },
   {
     id: "278",
@@ -21744,7 +21744,7 @@ export const metadata = [
     mouth: "Cigarette",
     hat: "Purple Backwards Cap",
     type: "Red",
-    background: "",
+    background: "Red",
   },
   {
     id: "1036",
@@ -49211,7 +49211,7 @@ export const metadata = [
     mouth: "None",
     hat: "None",
     type: "Alien",
-    background: "",
+    background: "Green",
   },
   {
     id: "3780",
@@ -50410,7 +50410,7 @@ export const metadata = [
     mouth: "None",
     hat: "Green Cap",
     type: "Red",
-    background: "",
+    background: "Red",
   },
   {
     id: "3292",

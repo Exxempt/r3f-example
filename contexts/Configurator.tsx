@@ -19,7 +19,6 @@ interface ConfiguratorContext {
     setSelectedMouthOption: Dispatch<SetStateAction<string>>;
     setSelectedTypeOption: Dispatch<SetStateAction<string>>;
     setSelectedBGOption: Dispatch<SetStateAction<string>>;
-    
 }
 
 const defaultConfigurator = {

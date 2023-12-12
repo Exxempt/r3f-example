@@ -1,5 +1,6 @@
 "use client"
 
+
 import * as React from 'react'
 import { useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber'
@@ -75,7 +76,7 @@ const [toggle, setToggle] = React.useState(true)
 const options = toggle ? ['foo', 'bar'] : ['x', 'y', 'z']
 
 const mainContentStyle = {
-  height: 'calc(100vh - 55px)', // Adjust 60px to your navbar height
+  height: 'calc(100vh - 55px)', 
 };
 
 // const values = useControls(
