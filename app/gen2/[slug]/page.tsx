@@ -11,6 +11,8 @@ import { MonkeEars, MonkeMouth, MonkeType, MonkeHat, MonkeClothes, MonkeEyes } f
 import { PivotControls } from '../../../components/pivotControls/index'
 import { metadata } from "@/lib/metadata"
 
+import { BottomNavbar } from '@/components/bottom-navbar'; 
+
 export default function Page({ params }: { params: { slug: string } }) {
   const router = useRouter();
   const slug = params.slug; 
@@ -116,6 +118,7 @@ export default function Page({ params }: { params: { slug: string } }) {
         </Canvas>
       </div>
     </main>
+    <BottomNavbar />
     </div>
   )
 }
