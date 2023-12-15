@@ -21,7 +21,8 @@ export default function RootLayout({
     <>
       <html lang="en" suppressHydrationWarning>
         <head />
-        <body className='h-screen w-screen'>
+        <body className=''>
+        {/* <body className='h-screen w-screen'> */}
           <ConfiguratorProvider>
             <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
               <SiteHeader />

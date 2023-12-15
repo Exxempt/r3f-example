@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import PopoverDrawer from '../components/PopoverDrawer';
 import Image from 'next/image';
 import { CameraIcon, Cog6ToothIcon, HomeIcon } from '@heroicons/react/24/outline';
+import ButtonInterface from './ButtonInterface';
+
 // https://heroicons.com/
 export function BottomNav() {
     const [isDrawerOpen, setDrawerOpen] = useState(false);
@@ -23,7 +25,8 @@ export function BottomNav() {
         </button>
         <PopoverDrawer isOpen={isDrawerOpen} onClose={() => setDrawerOpen(false)}>
         {/* Content of the drawer */}
-        <p>This is the content of the drawer.</p>
+        {/* <p>This is the content of the drawer.</p> */}
+        <ButtonInterface /> 
         <button onClick={() => setDrawerOpen(false)}>Close</button>
       </PopoverDrawer>
       </div>
