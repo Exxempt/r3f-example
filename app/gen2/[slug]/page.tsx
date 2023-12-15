@@ -12,6 +12,7 @@ import { PivotControls } from '../../../components/pivotControls/index'
 import { metadata } from "@/lib/metadata"
 
 import { BottomNavbar } from '@/components/bottom-navbar'; 
+import { BottomNav} from '@/components/bottom-navbar2'; 
 
 export default function Page({ params }: { params: { slug: string } }) {
   const router = useRouter();
@@ -118,7 +119,8 @@ export default function Page({ params }: { params: { slug: string } }) {
         </Canvas>
       </div>
     </main>
-    <BottomNavbar />
+    {/* <BottomNavbar /> */}
+    <BottomNav />
     </div>
   )
 }
