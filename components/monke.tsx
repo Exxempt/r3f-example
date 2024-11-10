@@ -4,7 +4,7 @@ import * as React from 'react'
 import { Box } from '@/components/box'
 import { useConfigurator } from "../contexts/Configurator";
 
-//export function Monke() {  
+//export function Monke() {
 export const Monke = () => {
   const { selectedEarsOption } = useConfigurator();
   console.log('monke.tsx')
@@ -195,8 +195,8 @@ export const Monke = () => {
         <Box position={[-5, -9, 0]} color='#ee9d2f' />
         <Box position={[-4, -9, 0]} color='#f2d55e' />
         <Box position={[-3, -9, 0]} color='#ee9d2f' />
-        <Box position={[-2, -9, 0]} color='#f2d55e' /> 
-        <Box position={[-1, -9, 0]} color='#ee9d2f' /> 
+        <Box position={[-2, -9, 0]} color='#f2d55e' />
+        <Box position={[-1, -9, 0]} color='#ee9d2f' />
         <Box position={[0, -9, 0]} color='#0e1a38' />
         <Box position={[1, -9, 0]} color='#ee9d2f' />
         <Box position={[2, -9, 0]} color='#ee9d2f' />
@@ -212,9 +212,9 @@ export const Monke = () => {
         <Box position={[-6, -10, 0]} color='#ee9d2f' />
         <Box position={[-5, -10, 0]} color='#ee9d2f' />
         <Box position={[-4, -10, 0]} color='#ee9d2f' />
-        <Box position={[-3, -10, 0]} color='#f2d55e' /> 
-        <Box position={[-2, -10, 0]} color='#ee9d2f' /> 
-        <Box position={[-1, -10, 0]} color='#ee9d2f' /> 
+        <Box position={[-3, -10, 0]} color='#f2d55e' />
+        <Box position={[-2, -10, 0]} color='#ee9d2f' />
+        <Box position={[-1, -10, 0]} color='#ee9d2f' />
         <Box position={[0, -10, 0]} color='#0e1a38' />
         <Box position={[1, -10, 0]} color='#ee9d2f' />
         <Box position={[2, -10, 0]} color='#ee9d2f' />

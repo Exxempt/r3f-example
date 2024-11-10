@@ -26,8 +26,6 @@ import { traits } from "@/lib/traits";
 
 export const Interface = () => {
   const {
-    legs,
-    toggleLegs,
     setSelectedClothesOption,
     setSelectedEarsOption,
     setSelectedEyesOption,
