@@ -25,7 +25,7 @@
     "class-variance-authority": "^0.6.1",
     "clsx": "^1.2.1",
     "cmdk": "^0.2.0",
-    "eslint": "8.44.0",
+    "eslint": "^8.44.0",
     "eslint-config-next": "^14.2.3",
     "leva": "^0.9.35",
     "lodash.clamp": "^4.0.3",
