@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, ChangeEvent, FormEvent } from 'react';
+import React, { useState, type ChangeEvent, type FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
 import { Button } from "@/components/ui/button";
 import {
@@ -22,7 +22,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useConfigurator } from "../contexts/Configurator";
-import { traits } from "@/lib/traits";
+import { traits } from "@/lib/new_traits";
 
 export const ButtonInterface = () => {
   const {
@@ -41,125 +41,16 @@ export const ButtonInterface = () => {
 
   };
 
-  const getClothes = () => {
-    return traits.filter((item) => item.trait_type == "Clothes");
-  };
-  const getEars = () => {
-    return traits.filter((item) => item.trait_type == "Ears");
-  };
-  const getEyes = () => {
-    return traits.filter((item) => item.trait_type == "Eyes");
-  };
-  const getHat = () => {
-    return traits.filter((item) => item.trait_type == "Hat");
-  };
-  const getMouth = () => {
-    return traits.filter((item) => item.trait_type == "Mouth");
-  };
-  const getType = () => {
-    return traits.filter((item) => item.trait_type == "Type");
-  };
-  const getBG = () => {
-    return traits.filter((item) => item.trait_type == "Background");
+  const getSortedTraitValues = (traitValues: readonly string[]) => {
+    return [...traitValues].sort((a, b) => a.localeCompare(b));
   };
 
-  const populateClothes = () => {
-    let item = getClothes();
-    let sortedItem = item.sort((a, b) => a.value.localeCompare(b.value))
-
-    let i = 0;
-    return sortedItem.map((trait) => {
-      i++;
-      return (
-        <SelectItem key={i} value={trait.value}>
-          {trait.value}
-        </SelectItem>
-      );
-    });
-  };
-
-  const populateEars = () => {
-    let item = getEars();
-    let sortedItem = item.sort((a, b) => a.value.localeCompare(b.value))
-    let i = 0;
-    return sortedItem.map((trait) => {
-      i++;
-      return (
-        <SelectItem key={i} value={trait.value}>
-          {trait.value}
-        </SelectItem>
-      );
-    });
-  };
-
-  const populateEyes = () => {
-    let item = getEyes();
-    let sortedItem = item.sort((a, b) => a.value.localeCompare(b.value))
-    let i = 0;
-    return sortedItem.map((trait) => {
-      i++;
-      return (
-        <SelectItem key={i} value={trait.value}>
-          {trait.value}
-        </SelectItem>
-      );
-    });
-  };
-
-  const populateHat = () => {
-    let item = getHat();
-    let sortedItem = item.sort((a, b) => a.value.localeCompare(b.value))
-    let i = 0;
-    return sortedItem.map((trait) => {
-      i++;
-      return (
-        <SelectItem key={i} value={trait.value}>
-          {trait.value}
-        </SelectItem>
-      );
-    });
-  };
-
-  const populateMouth = () => {
-    let item = getMouth();
-    let sortedItem = item.sort((a, b) => a.value.localeCompare(b.value))
-    let i = 0;
-    return sortedItem.map((trait) => {
-      i++;
-      return (
-        <SelectItem key={i} value={trait.value}>
-          {trait.value}
-        </SelectItem>
-      );
-    });
-  };
-
-  const populateType = () => {
-    let item = getType();
-    let sortedItem = item.sort((a, b) => a.value.localeCompare(b.value))
-    let i = 0;
-    return sortedItem.map((trait) => {
-      i++;
-      return (
-        <SelectItem key={i} value={trait.value}>
-          {trait.value}
-        </SelectItem>
-      );
-    });
-  };
-
-  const populateBG = () => {
-    let item = getBG();
-    let sortedItem = item.sort((a, b) => a.value.localeCompare(b.value))
-    let i = 0;
-    return sortedItem.map((trait) => {
-      i++;
-      return (
-        <SelectItem key={i} value={trait.value}>
-          {trait.value}
-        </SelectItem>
-      );
-    });
+  const renderTraitItems = (traitValues: readonly string[]) => {
+    return getSortedTraitValues(traitValues).map((value) => (
+      <SelectItem key={value} value={value}>
+        {value}
+      </SelectItem>
+    ));
   };
 
   const [number, setNumber] = useState<string>('');
@@ -169,8 +60,10 @@ export const ButtonInterface = () => {
   const router = useRouter();
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-      e.preventDefault(); // Prevents the default form submit action
-      router.push(`/gen2/${number}`); // Redirects to the new URL
+    e.preventDefault();
+    const trimmedNumber = number.trim();
+    if (!trimmedNumber) return;
+    router.push(`/gen2/${trimmedNumber}`);
   };
 
     return (
@@ -196,7 +89,7 @@ export const ButtonInterface = () => {
                   <SelectValue placeholder="Select" />
                   <SelectContent position="popper">
                     <ScrollArea className="h-72  rounded-md border">
-                      {populateClothes()}
+                      {renderTraitItems(traits.Clothes)}
                     </ScrollArea>
                   </SelectContent>
                 </SelectTrigger>
@@ -209,7 +102,7 @@ export const ButtonInterface = () => {
                   <SelectValue placeholder="Select" />
                   <SelectContent position="popper">
                     <ScrollArea className="h-38  rounded-md border">
-                      {populateEars()}
+                      {renderTraitItems(traits.Ears)}
                     </ScrollArea>
                   </SelectContent>
                 </SelectTrigger>
@@ -222,7 +115,7 @@ export const ButtonInterface = () => {
                   <SelectValue placeholder="Select" />
                   <SelectContent position="popper">
                     <ScrollArea className="h-72  rounded-md border">
-                      {populateEyes()}
+                      {renderTraitItems(traits.Eyes)}
                     </ScrollArea>
                   </SelectContent>
                 </SelectTrigger>
@@ -235,7 +128,7 @@ export const ButtonInterface = () => {
                   <SelectValue placeholder="Select" />
                   <SelectContent position="popper">
                     <ScrollArea className="h-72  rounded-md border">
-                      {populateHat()}
+                      {renderTraitItems(traits.Hat)}
                     </ScrollArea>
                   </SelectContent>
                 </SelectTrigger>
@@ -248,7 +141,7 @@ export const ButtonInterface = () => {
                   <SelectValue placeholder="Select" />
                   <SelectContent position="popper">
                     <ScrollArea className="h-42 rounded-md border">
-                      {populateMouth()}
+                      {renderTraitItems(traits.Mouth)}
                     </ScrollArea>
                   </SelectContent>
                 </SelectTrigger>
@@ -261,7 +154,7 @@ export const ButtonInterface = () => {
                   <SelectValue placeholder="Select" />
                   <SelectContent position="popper">
                     <ScrollArea className="h-74  rounded-md border">
-                      {populateType()}
+                      {renderTraitItems(traits.Type)}
                     </ScrollArea>
                   </SelectContent>
                 </SelectTrigger>
@@ -274,7 +167,7 @@ export const ButtonInterface = () => {
                   <SelectValue placeholder="Select" />
                   <SelectContent position="popper">
                     <ScrollArea className="h-42 rounded-md border">
-                      {populateBG()}
+                      {renderTraitItems(traits.Background)}
                     </ScrollArea>
                   </SelectContent>
                 </SelectTrigger>

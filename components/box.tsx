@@ -1,5 +1,6 @@
 "use client";
 
+import { type JSX } from "react";
 import { useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 

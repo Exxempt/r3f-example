@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import Head from 'next/head';
 import * as React from 'react'
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls} from "@react-three/drei";
 import { MonkeEars, MonkeMouth, MonkeType, MonkeHat, MonkeClothes, MonkeEyes } from '@/components/monke/MonkeGen';
@@ -11,8 +11,8 @@ import { PivotControls } from '../../../components/pivotControls/index'
 import { metadata } from "@/lib/metadata"
 import { BottomNav} from '@/components/bottom-navbar2';
 
-export default function Page({ params }: { params: { slug: string } }) {
-  const slug = params.slug;
+export default function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = React.use(params);
 
   useEffect(() => {
     const pageTitle = slug ? `SMB 3-D | #${slug}` : 'SMB 3-D';
@@ -27,53 +27,35 @@ export default function Page({ params }: { params: { slug: string } }) {
     }
   }, [slug]);
 
-  const [attach, setAttach] = useState<string>('');
-  const [args, setArgs] = useState<string>('');
-  const [save, setSave] = useState<string>('')
+  const monke = metadata.find((monke) => String(monke.id) === slug)
 
-  const monke = metadata.find((monke) => monke.id === params.slug)
-  const monkeBG = monke?.background
-  const selectedBGOption = monkeBG === "" ? "None" : monke?.background;
-
-  function checkBGselection() {
-    if (selectedBGOption == "None") {
-      setAttach('')
-      setArgs('')
-    }
-    else {
-      setAttach('background')
-      if (selectedBGOption == "Blue") {
-        setArgs('#e2e6fe')
-      }
-      if (selectedBGOption == "Green") {
-        setArgs('#9de5b5')
-      }
-      if (selectedBGOption == "Orange") {
-        setArgs('#f5bf93')
-      }
-      if (selectedBGOption == "Purple") {
-        setArgs('#c6aedd')
-      }
-      if (selectedBGOption == "Yellow") {
-        setArgs('#f2e8ac')
-      }
-      if (selectedBGOption == "Red") {
-        setArgs('#e698ab')
-      }
-      if (selectedBGOption == "White") {
-        setArgs('#e2e6fe')
-      }
-      if (selectedBGOption == "") {
-        setArgs('')
-      }
-    }
+  if (!monke) {
+    return (
+      <main className="flex min-h-screen items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold">Monke no exist 🍌</h1>
+          <p className="mt-2 text-sm opacity-70">No monke found for #{slug}</p>
+        </div>
+      </main>
+    )
   }
 
-  if (save !== selectedBGOption) {
-    checkBGselection()
-    setSave(selectedBGOption as any)
+  const monkeBG = monke.background
+  const selectedBGOption = monkeBG === "" ? "None" : monke.background;
+
+  const bgColorMap: Record<string, string> = {
+    Blue: '#e2e6fe',
+    Green: '#9de5b5',
+    Orange: '#f5bf93',
+    Purple: '#c6aedd',
+    Yellow: '#f2e8ac',
+    Red: '#e698ab',
+    White: '#e2e6fe',
   }
-  const ref = useRef()
+
+  const bgColor = bgColorMap[selectedBGOption] ?? ''
+  const attach = bgColor ? 'background' : ''
+  const colorArgs: [string] | null = bgColor ? [bgColor] : null
 
   return (
 <div>
@@ -89,24 +71,26 @@ export default function Page({ params }: { params: { slug: string } }) {
     </div> */}
 {/* 150 */}
       <div className="relative overlap place-items-center before:absolute before:h-[600px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]" style={{ width: "100vw", height: `calc(100vh - 112px)` }}>
-        <Canvas className='wrap'
+        <Canvas
+          className='wrap'
+          gl={{ preserveDrawingBuffer: true }}
           camera={{
             position: [0, 0, 75],
             fov: 20,
           }}>
-          <color attach={attach} args={[args]} />
+          {colorArgs && <color attach={attach} args={colorArgs} />}
           <ambientLight intensity={0.9} />
           <spotLight position={[10, 10, 10]} angle={0.15} penumbra={5} shadow-mapSize={2048} castShadow />
           <pointLight position={[-10, -10, -10]} />
 
           <PivotControls visible={false} rotation={[0, -Math.PI / 2, 0]} anchor={[1, -1, -1]} scale={75} depthTest={false} fixed lineWidth={2}>
             <mesh castShadow receiveShadow position={[-1, 0.5, 1]}>
-              <MonkeType x={monke!.type} />
-              <MonkeEars x={monke!.ears} />
-              <MonkeEyes x={monke!.eyes} />
-              <MonkeMouth x={monke!.mouth} />
-              <MonkeHat x={monke!.hat} />
-              <MonkeClothes x={monke!.clothes} />
+              <MonkeType x={monke.type} />
+              <MonkeEars x={monke.ears} />
+              <MonkeEyes x={monke.eyes} />
+              <MonkeMouth x={monke.mouth} />
+              <MonkeHat x={monke.hat} />
+              <MonkeClothes x={monke.clothes} />
             </mesh>
           </PivotControls>
           <OrbitControls makeDefault />
