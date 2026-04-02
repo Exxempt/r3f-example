@@ -1,6 +1,5 @@
 "use client"
 
-
 import * as React from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, GizmoHelper, GizmoViewport } from "@react-three/drei";
