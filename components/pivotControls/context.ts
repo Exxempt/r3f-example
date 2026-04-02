@@ -42,7 +42,7 @@ const isRef = (object: any): object is React.MutableRefObject<THREE.Object3D> =>
 export const resolveObject = (
   object?: THREE.Object3D | React.MutableRefObject<THREE.Object3D>,
   fallback?: THREE.Object3D | React.MutableRefObject<THREE.Object3D>
-) =>
+): THREE.Object3D | undefined =>
   isRef(object)
     ? object.current
     : object
