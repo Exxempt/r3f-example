@@ -8,6 +8,7 @@ interface Props {
   x: string;
 }
 
+
 export const MonkeClothes: FC<Props> = ({ x }) => {
   const generateClothes = () => {
     if (x == "Diamond") {
