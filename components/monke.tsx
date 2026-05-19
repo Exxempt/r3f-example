@@ -115,6 +115,7 @@ export const Monke = () => {
         <Box position={[7, -2, 0]} color='#c3f3f4' />
         <Box position={[8, -2, 0]} color='#0e1a38' />
 
+
         <Box position={[-4, -3, 0]} color='#0e1a38' />
         <Box position={[-3, -3, 0]} color='#4f9dc4' />
         <Box position={[-2, -3, 0]} color='#0e1a38' />
